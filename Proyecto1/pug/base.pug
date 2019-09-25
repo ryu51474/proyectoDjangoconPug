@@ -1,0 +1,17 @@
+doctype
+html(lang='es')
+    head
+        meta(charset='utf-8')
+        title 
+        |
+        |{% block title %}{% endblock %}
+        
+    body
+        h1(style='background-color:darkolivegreen;color:white;text-align:center') Curso de Django de pildoras informaticas
+        |
+        |{% include "nav-bar.html" %}
+        h3(style='text-align:right') Cursos de programacion que he aprendido autodidacta
+        |
+        |{% block content %}{% endblock %}
+
+        p(style='background-color:darkolivegreen;color:white;text-align:right') Curso gratuito que hice en youtube

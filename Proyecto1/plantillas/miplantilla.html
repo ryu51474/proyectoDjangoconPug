@@ -1,0 +1,54 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>localHost 8000 /saludo</title>
+    {% include "nav-bar.html" %}
+  </head>
+  <body style="text-align:center">
+    
+    {% include "barra.html" %}
+    <h2 style="color:red">TITULO CON ROJO</h2>
+    <div style="text-align:center"><img src="https://liceotecnicotalcahuano.cl/wp-content/uploads/2017/09/cropped-LOGO.png" alt="logo" align="middle" height="100" width="80"/></div>
+    <h3 style="color:blue">Hola, esta es la primera plantiilla </h3>
+    {% if nombre_persona == 'profesor Holger' %}
+    
+    {# ESTo ES UN COMENTARIO DE PLANTiLLA #}
+    
+    {% comment %}
+    
+    Esto es un cmentario de dos o mas lineas
+    esto es un comentario de una segunda linea
+    
+    {% endcomment %}
+    <p style="color:skyblue">el curso lo imparte el profesor titular</p>
+    {% else %}
+    <p style="color:green">el curso lo imparte el profesor suplente</p>
+    {% endif %}
+    <p>El nombre del profesor es {{nombre_persona|upper}} {{apellido_persona.lower}}</p>
+    <p>estamos viendo el tema de las plantillas a d&iacutea : {{momento_actual.day}}/{{momento_actual.month}}/{{momento_actual.year}}</p>
+    <p><strong>Temas del curso</strong></p>
+    <p>bucle for</p>
+    <p>
+      <ul>
+         {% for elTema in temas%} 
+        <li>{{elTema|first|upper}}</li> 
+         {%endfor%} 
+      </ul>
+    </p>
+    <p>condicional if</p>
+    <p>
+      <ul>
+         {% if temas.1%}
+        {% for elTema in temas%} 
+        <li>{{elTema}}</li> 
+         {%endfor%} 
+         {% else %}
+        <li>no hay temas</li>
+         {% endif %}
+      </ul>
+    </p>
+  </body>
+</html>
